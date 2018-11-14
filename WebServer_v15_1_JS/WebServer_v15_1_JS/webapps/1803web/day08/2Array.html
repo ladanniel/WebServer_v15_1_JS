@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+     <script type="text/javascript">
+                /* 创建数组的两种方式，数组中可以添加任何 */
+               // var arr1 = ["小明",18,true];
+                /* 创建一个空的数组 */
+               // var arr2 = new Array();
+                /* 数组中添加到数组中 */
+               // arr2.push("小草");
+               // arr2.push(25);
+              /*   alert(arr1);
+                alert(arr2); */
+                /* 数组的长度可变 */
+                /* arr1.length=1;
+                alert(arr1); */
+                /* 从数组中取数据 */
+                //alert(arr2[1]);
+               // for(var i = 0;i<arr2.length;i++){
+                //	alert(arr[i]);
+               // }
+                
+                function add(){
+                	var arrs = document.getElementById("myinput");
+                	var td = arrs.value.split("a");
+                	alert(td);
+                	/* 得到x元素 */
+                	var x = document.getElementById("news");
+                	for(var i=0;i<td.length;i++){
+                		 var m = td[i]
+                		 /*方法一var str = "<li>[content]</li>";
+                		str = str.replace("[content]",m); */
+                		/* 把内容添加到ul中 */
+                		x.innerHTML +="<li>"+m+"</li>";          //方法二
+                		
+                		
+                	}
+                	
+                	
+                
+                }
+     
+     </script>
+ 
+</head>
+<body>
+      <input type="text" id="myinput">
+         北京a天津a湖南a湖北
+      <input type="button" onclick="add()" value="添加新闻">
+      <ul id="news">
+      
+      </ul>
+
+</body>
+</html>

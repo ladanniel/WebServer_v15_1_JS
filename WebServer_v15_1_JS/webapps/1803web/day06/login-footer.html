@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+        <style type="text/css">
+               body{
+                         font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+                         font-size: 12px;
+                         color: rgb(102, 102, 102);
+                         background-color: rgb(245, 245, 245);
+                         margin: 0px;
+                        font-weight: normal;}
+        
+        
+        
+               header{overflow: hidden;
+                      padding: 20px 50px 30px 50px;
+                      width: 1000px;
+                      margin: 0 auto;
+                      }
+               header img{float: left;}
+               
+               header h1{float: left;
+                          margin: 0px;
+                          margin: 10px 0 0 24px;
+                          font-size: 24px;}
+      #footer{width: 1000px;
+              margin: 0 auto;
+              background-color: white;
+              padding: 20px 0;}
+   
+              
+     #footer>p{text-align: center;clear: both;
+                }
+     
+     #footer{
+                 
+                 overflow: hidden;/* 因为它下面的三个div中的内容全度浮动了，为了识别高度 */
+                 
+                 }
+     #footer_left_div>img{display: block;}
+                 
+     #footer_left_div,#footer_center_div,#footer_right_div{width: 333px;/* 三个等大小的div所占宽度为：1000/3 */
+                      float: left;
+                      border: 1px solid red;
+                      }
+    #footer_center_div ul{list-style-type: none;/* 去掉点 */
+                           padding: 0;/*去掉默认样式  */
+                           }
+    #footer_center_div>ul>li{
+                           float: left;
+                           width: 111px;
+                           font-weight: bold;
+                           font-size: 14px;
+                           text-align: center;
+    }
+     #footer_left_div>ul>li>ul>li{
+                           font-size: 12px;
+                           margin: 5px 0;
+                           }
+     #img{position: relative;left: -8}
+     #footer_right_div div{
+                           width: 166px;
+                           float: left;
+                           }
+     
+     #footer_right_div div h3{
+                           margin: 0 0 10px 0;/*距离下面10px  */
+     } 
+     
+     #footer_left_div img{margin-left: 40px;}
+                          
+      
+        </style>
+</head>
+<body>
+      <footer>
+           <div id="footer_left_div">
+                <img alt="" src="../images/footer/logo.png">
+                <img alt="" src="../images/footer/footerFont.png">
+           </div>
+              
+               <div id="footer_center_div">
+               <ul>
+                    <li>买家帮助  
+                         <ul>
+                           <li>新手指南</li>
+                           <li>服务保障</li>
+                           <li>常见问题</li>
+                          </ul>
+                     </li>
+                     
+                      <li>买家帮助  
+                         <ul>
+                           <li>新手指南</li>
+                           <li>服务保障</li>
+                           <li>常见问题</li>
+                          </ul>
+                     </li>
+                     
+                      <li>买家帮助  
+                         <ul>
+                           <li>新手指南</li>
+                           <li>服务保障</li>
+                           <li>常见问题</li>
+                          </ul>
+                     </li>
+                     
+                                    
+                </ul>  
+              </div>
+               
+                   <div id="footer_right_div">
+                           <div>
+                                <h3>学子商城客户端</h3>
+                                <img alt="" src="../images/footer/android.png"> 
+                                <img alt="" src="../images/footer/ios.png"> 
+                           
+                           
+                           </div>
+                           <div>
+                                <img alt="" src="../images/footer/erweima.png">
+                           </div>
+                   </div>
+      
+               <!--  -->
+              
+              <div>
+                   <p>© 2017 达内集团有限公司 版权所有 京ICP证xxxxxxxxxxx</p> 
+              </div>
+              
+      </footer>
+</body>
+</html>

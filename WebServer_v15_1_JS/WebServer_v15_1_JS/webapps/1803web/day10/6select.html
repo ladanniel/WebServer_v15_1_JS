@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <style type="text/css">
+        select{
+                width: 80px;
+                height: 30px;
+                margin: 0 auto;
+        }
+  </style>
+  <script type="text/javascript">
+                var cities=[["唐山","秦皇岛","邯郸"],["哈尔滨","齐齐哈尔","佳木斯"],["青岛","济南","烟台"]];
+                function changeAction(){
+                	
+                	//得到显示省的select
+                	var s1 = document.getElementById("s1")
+                	//得到用户选择的数组下标
+                	var index = s1.value;
+                	//通过下标，找到对应的城市信息
+                	var arr = cities[index];
+                	/* alert(arr); */
+                	//得到s2为了往里面添加内容
+                	var s2 = document.getElementById("s2");
+               	  //判断选择的省份，非请选择
+               	  //清除之前s2中的内容
+               	  s2.innerHTML = "<option>请选择</option>";
+               	  
+
+               	  if(arr){
+               		  //遍历选择的每一个城市
+               		  for(var i=0;i<=arr.length;i++){
+               			  var city = arr[i];
+               			  //创建option元素
+               			  var opt = document.createElement("option");
+               			  //把city放进option里面
+               			  opt.innerText = city;
+               			  //把option添加到s2里面
+               			  s2.appendChild(opt);
+               			 
+               		  }
+               	  }
+               	 
+                }
+                
+                
+                
+                
+  </script>
+</head>
+<body>
+           <select id="s1" onchange="changeAction()">
+                  <option>请选择</option>
+                  <option value="0">河北</option>
+                  <option value="1">黑龙江</option>
+                  <option value="2">山东</option>
+                  
+           </select>
+           <select id="s2">
+                   <option>请选择</option>
+                   
+           </select>
+
+</body>
+</html>

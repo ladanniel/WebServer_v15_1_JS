@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title> 
+     <style type="text/css">
+     img{
+         width: 150px;
+         height: 100px;
+         position: absolute;
+         left: 0px;
+     }
+     </style>
+     <script type="text/javascript">
+            onclick = function(){
+            	var img = document.getElementById("myimg");
+            	//得到初始位置，此处必须加强制转换为int类型整数
+            	var x = parseInt(img.style.left);
+            	//此处的x为NaN;
+            	//所以判断x是不是一个数
+            	
+            	if(isNaN(x)){
+            		x=0;
+            		
+            	}
+            	x+=10;
+            	img.style.left = x+"px";
+            	
+            }
+            
+            
+     </script>
+</head>
+<body>
+      <img id="myimg" alt="" src="1.jpg">
+</body>
+</html>

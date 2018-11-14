@@ -1,0 +1,146 @@
+HTTP协议  超文本传输协议
+
+HTTP协议是应用层协议，底层要求的传输协议必须是可靠的
+传输协议，通常是TCP协议。
+HTTP协议规定客户端与服务端之间的通讯方式为一次请求一
+次响应。即:
+客户端发起连接，并向服务端发送一个标准的HTTP请求，而
+后服务端处理该请求后给与回应一个标准HTTP响应。
+所以对于HTTP协议而言，服务端永远不会主动响应客户端。
+
+HTTP协议现在常用的是HTTP1.1版本协议。
+在HTTP1.0版本时，要求一次会话只完成一次请求与响应。
+即:客户端与服务端建立TCP连接后，发送一次请求，当服务端
+予以响应后即断开连接。
+
+在HTTP1.1版本中，一个较大的改动就是在一次会话中可以完
+成多次请求与响应。
+
+
+HTTP协议中规定的请求与响应的内容大部分是文本数据。
+但是这些字符只能是ISO88590-1编码中出现的字符，这
+意味着在HTTP协议内容中是不能直接出现中文等字符的。
+
+
+HTTP协议中的请求定义:Request
+一个请求通常包含三部分:请求行，消息头，消息正文。
+
+1:请求行
+请求行的格式为:
+Method Url Protocol(CRLF)
+请求方式 请求的资源路径 协议版本
+例如:
+GET /index.html HTTP/1.1
+
+
+2:消息头
+消息头是客户端发起请求是传递过来的一些附加信息，比如
+描述了客户端是谁，以及希望与服务端如何通讯，描述消息
+正文的长度以及内容类型等信息。
+消息头由若干行组成，每一行为一个消息头，格式为:
+name: value(CRLF)
+
+当所有消息头全部发送完毕后会单独发送一个CRLF。
+
+例如:
+Host: localhost:8080(CRLF)
+Connection: keep-alive(CRLF)
+Cache-Control: max-age=0(CRLF)
+Upgrade-Insecure-Requests: 1(CRLF)
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36(CRLF)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8(CRLF)
+Accept-Encoding: gzip, deflate, sdch(CRLF)
+Accept-Language: zh-CN,zh;q=0.8(CRLF)(CRLF)
+
+
+3:消息正文
+消息正文是2进制数据，内容是用户实际要向服务端传递的
+数据。它可能是用户传递的注册用户的信息，上传的附件内
+容等。
+一个请求中可以不含有消息正文部分。
+请求是否含有消息正文的一个重要的标志是该请求的消息
+头中是否含有以下两个头:
+Content-Type:用于说明消息正文的内容是什么类型数据
+Content-Length:用于说明消息正文的数据长度(字节量)
+
+一个标准请求如下:
+GET /index.html HTTP/1.1(CRLF)
+Host: localhost:8080(CRLF)
+Connection: keep-alive(CRLF)
+Cache-Control: max-age=0(CRLF)
+Upgrade-Insecure-Requests: 1(CRLF)
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36(CRLF)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8(CRLF)
+Accept-Encoding: gzip, deflate, sdch(CRLF)
+Accept-Language: zh-CN,zh;q=0.8(CRLF)(CRLF)
+
+
+
+
+
+
+HTTP响应
+响应是服务端发送给客户端的内容。
+一个响应应当包含的三部分为:状态行，响应头，响应正文
+
+1:状态行
+状态行格式分为三部分:
+protocol status_code status_reason(CRLF)
+协议版本     状态代码         状态描述 
+
+状态代码是一个3位数字，分为5类
+1xx:消息，在HTTP1.0协议时为保留部分，未使用。
+2xx:成功，表示客户端请求成功
+3xx:重定向，表示要求客户端需要进行进一步操作才能完成
+                      请求
+4xx:客户端错误，表示客户端的请求无效
+5xx:服务端错误，表示请求被接收，但是服务端处理是发生
+                             了错误
+
+常见状态码：
+200:请求已接收，并正常响应客户端
+302:要求客户端进一步请求服务端指定的路径
+404:客户端请求的资源未找到
+500:服务端发生错误
+
+
+2:响应头
+响应头的格式与意义同请求中的消息头一样。
+
+3:响应正文
+响应正文也是2进制数据，是服务端响应给客户端的实体数据
+通常就是客户端所请求的资源。
+一个响应中是否有响应正文可以通过响应头中的两个头信息
+得知:
+Content-Type:说明响应正文中的数据类型
+Content-Length:说明响应正文的长度(字节量)
+客户端就是通过这两个头来读取并理解响应正文内容的。
+
+一个响应的内容大致为:
+HTTP/1.1 200 OK(CRLF)
+Content-Type: text/html(CRLF)
+Content-Length: 14424(CRLF)(CRLF)
+101001010100100101010....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

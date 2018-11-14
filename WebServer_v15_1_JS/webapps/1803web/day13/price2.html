@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<style type="text/css">
+        body{
+             text-align: center;
+        }
+        table{
+              width: 80%;
+              margin: 0 auto;
+              border:1px solid red; 
+              border-collapse:collapse;//合并边框
+              
+        }
+        tr,td{
+               border: 1px solid red;
+        }
+</style>
+<script type="text/javascript">
+//绑定
+           $(function(){
+        	   $("input[value = '加入购物车']").click(
+        			   function(){
+        		   var name = $(this).parent().siblings().eq(0).text();
+        		   alert(name);
+        		   var price = $(this).parent().siblings().eq(1).text();
+        		   alert(price);
+        	   })
+           });
+</script>
+</head>
+<body>
+         <h1>特价商品</h1>
+     <table id="tax">
+            <tr>
+                <th>商品名称</th>
+                <th>商品单价</th>
+                <th>商品库存</th>
+                <th>好评率</th>
+                <th>操作</th>
+            </tr>
+            
+            <tr>
+                <td>水杯</td>
+                <td>25</td>
+                <td>3</td>
+                <td>89%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+            
+             <tr>
+                <td>笔记本</td>
+                <td>6000</td>
+                <td>10</td>
+                <td>90%</td>
+                <td><input type="button"   value="加入购物车"></td>
+            </tr>
+             <tr>
+                <td>机械键盘</td>
+                <td>150</td>
+                <td>10</td>
+                <td>80%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+             <tr>
+                <td>鼠标</td>
+                <td>120</td>
+                <td>10</td>
+                <td>70%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+            <tr>
+                <td>贴膜</td>
+                <td>80</td>
+                <td>10</td>
+                <td>80%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+     </table>
+     <h1>购物车</h1>
+     <table id="sum">
+            <tr>
+                <td>商品名称</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>金额</td>
+                <td>操作</td>
+            </tr>
+            <tr id="total">
+                <td  colspan="5">总价：</td>
+            </tr>
+     </table>
+</body>
+</html>

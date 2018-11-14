@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+           
+         function add(){
+        	//得到相关内容
+    	 var name =  $("input:eq(0)").val();
+    	 var age =  $("input:eq(1)").val();
+    	 var sal =  $("input:eq(2)").val();
+    	 //创建tr
+    	 var $tr = $("<tr></tr>");
+    	 var $n = $("<td>"+name+"</td>");
+    	 var $a = $("<td>"+age+"</td>");
+    	 var $s = $("<td>"+sal+"</td>");
+    	 //添加删除按钮
+    	 var $deltd = $("<td><input type='button' value='x' onclick='del(this)'></td>");
+    	 
+    	 //加载tr到td
+    	 $tr.append($n);
+    	 $tr.append($a);
+    	 $tr.append($s);
+    	 $tr.append($deltd);
+    	 $("table").append($tr);
+    	   
+       }
+         function del(btn){
+        	 $(btn).parent().parent().remove();
+        	 
+         }
+         
+           
+</script>
+</head>
+<body>
+         
+     <input type="text" placeholder="姓名" >
+     <input type="text" placeholder="年龄">
+     <input type="text" placeholder="工资">
+         
+     <input type="button" onclick="add()" value="添加">
+      <table>
+          <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>工资</th>
+            <th>操作</th>
+          </tr>
+      </table>
+
+</body>
+</html>

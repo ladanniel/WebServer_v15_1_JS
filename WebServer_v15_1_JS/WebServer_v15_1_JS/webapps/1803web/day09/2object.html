@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+                     <script type="text/javascript">
+                            /* 第一种创建对象的方法  定义了一个空对象 */
+                        /*     function Person(){}
+                            //给对象添加属性和方法；
+                            var p1 = new Person(); */
+                          /*   p1.name = "小明";
+                            p1.age = 3;
+                            p1.run = function(){
+                            	alert(this.name+":"+this.age);
+                            }
+                            p1.run(); */
+                            /* 第一种方法：定义一个带属性和方法的对象 */
+                         /*    function Person(name,age){
+                            	this.name = name;
+                            	this.age = age;
+                            	this.run = function(){
+                            		alert(this.name+":"+this.age);
+                            	}
+                            	
+                            }
+                            var p2 = new Person("曹操",38);
+                            p2.run();
+                             */
+         //第二种创建方式：
+         var p = {
+                    "name":"曹操",
+                    "age":"18",
+                    "run":function(){
+                    	alert(this.name+":"+this.age)
+                    }        		 
+                     }
+           /* 调用方法 */
+            p.run();
+                             
+                             
+                             
+                             
+                            
+                     </script>
+</head>
+<body>
+
+</body>
+</html>

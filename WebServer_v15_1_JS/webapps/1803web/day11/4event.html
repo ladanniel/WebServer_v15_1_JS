@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+                             function btn(){
+                            	/*  //获得事件的事件源
+                            	 alert(event.target.nodeName);
+                            	 //可能浏览器兼容性问题，有些浏览器可能不支持target,采用下面的写法
+                            	 alert(event.srcElement.nodeName);
+                            	 //通用写法 */
+                            	 var obj = event.target||event.srcElement;
+                            	 alert(obj.nodeName);
+                            	 
+                             }
+
+</script>
+         <style type="text/css">
+           div{
+           
+                         border: 1px solid red;
+           }
+           p{ border: 1px solid green;
+           }
+           pinput{border: 1px solid blue;
+           }
+         </style>
+</head>
+<body>
+      <div  onclick="alert('div按钮')">
+           <p  onclick="alert('p按钮')">
+               <input type="button" value="按钮" onclick="btn()"  onclick="alert('按钮')">
+           </p>
+      </div>
+
+</body>
+</html>

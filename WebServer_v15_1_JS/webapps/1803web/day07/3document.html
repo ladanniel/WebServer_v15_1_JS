@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+                              function getName(){
+                            	  /* 1、先得到文本框标签 */
+                      var nameInput = document.getElementById("name");
+                      var number= nameInput.value; 	  
+                            	  /* 2、获取内容并显示 */
+                            	  alert(nameInput.value);
+                              }
+</script>
+</head>
+<body>
+    用户名： <input id="name" type="text">
+             <input type="button"  onclick="getName()"  value="获取用户名">
+             <div id="div"></div>
+             
+
+</body>
+</html>

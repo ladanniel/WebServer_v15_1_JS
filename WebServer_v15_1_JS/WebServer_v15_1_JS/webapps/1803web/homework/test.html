@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>js练习五</title>
+<script type="text/javascript">
+        var dict = {
+        '百度':'http://www.baidu.com',
+        '新浪':'http://www.sina.com.cn',
+        '谷歌':'http://www.g.cn'
+    };
+    window.onload = function () {
+        document.getElementById('btn').onclick = function () {
+            //动态创建表格
+            var tableWebsiteList = document.createElement('table');
+            tableWebsiteList.border = "1";
+            //1.1遍历数据动态建行
+            for (var key in dict) {
+                var trObject = document.createElement('tr');
+                var td1 = document.createElement('td');
+                td1.innerHTML = key;
+                var td2 = document.createElement('td');
+                td2.innerHTML = '<a href="' + dict[key] + '">' + key + '</a>';
+                trObject.appendChild(td1);
+                trObject.appendChild(td2);
+                tableWebsiteList.appendChild(trObject);
+            }
+            //把表格加到body中
+            document.body.appendChild(tableWebsiteList);
+        };
+    };
+    </script>
+</head>
+<body>
+<input type="button" name="button" value="OK" id="btn">
+</body>
+</html>

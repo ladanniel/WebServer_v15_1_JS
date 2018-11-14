@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+          <script type="text/javascript">
+                onload = function(){
+                   var GL = document.getElementsByClassName("group");  //得到所有的分组li
+                  for(var i =0;i<GL.length;i++){
+                	  var li=GL[i];
+                	  var ul = li.getElementsByTagName("ul")[0];//得到li里面的ul，使document获取的是整个页面的
+                	  ul.style.display = "none"; //隐藏ul，并脱离文档流
+                  }
+                }
+                
+                function closeall(){          //所有的分组全部关闭
+                	   var GL = document.getElementsByClassName("group"); 
+                       for(var i =0;i<GL.length;i++){
+                     	  var li=GL[i];
+                     	  var ul = li.getElementsByTagName("ul")[0];
+                     	  ul.style.display = "none"; 
+                       }
+                	
+                }
+                
+                function clickfn(){
+                	var obj = event.target||event.srcElement;     //获取事件源 
+                     if(obj.className === "group"){//判断是否是分组
+                    	 var ul =obj.getElementsByTagName("ul")[0];//得到ul
+                    	 if(ul.style.display === "none"){//隐藏
+                    		 closeall();                                      //所有的分组全部关闭 study方法:将代码步骤以中文的形式把流程写出来，再把中文编译成代码
+                    		 ul.style.display ="block";
+                    	 }else{
+                    		 ul.style.display ="none";
+                    	 }
+                    	 
+                     }
+                	
+                }
+          </script>
+
+</head>
+<body>
+    <ul onclick="clickfn()">
+    <li class="group">美女好友
+     <ul>
+         <li>杨幂</li>
+         <li>迪丽热巴</li>
+         <li>刘亦菲</li>
+         <li>李若彤</li>
+     </ul>
+     </li>
+      <li class="group">工作好友
+     <ul>
+         <li>苍老师</li>
+         <li>马云</li>
+         <li>王健林</li>
+         <li>李彦宏</li>
+     </ul>
+     </li>
+     
+     <li class="group">皇家马德里
+     <ul>
+         <li>伊瓜因</li>
+         <li>罗纳尔多</li>
+         <li>卡卡</li>
+         <li>罗纳尔迪尼奥</li>
+     </ul>
+     </li>
+   </ul>
+</body>
+</html>

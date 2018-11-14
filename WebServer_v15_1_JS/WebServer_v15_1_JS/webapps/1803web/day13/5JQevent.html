@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+         $(function(){//页面加载完成事件
+        	 //延时执行
+        	 setTimeout(function(){//模拟按钮点击事件
+        		 $("input").trigger("click")
+        	 },1000);
+         $("div").hover(function(){
+        	 console.log("进来了");
+         },function(){
+        	 console.log("出去了");
+         });
+         });
+         
+         function clickfn(){
+        	 alert("按钮被点击了");
+         };
+         
+</script>
+<style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: green;
+            }
+</style>
+</head>
+<body>
+      <input type="button" onclick="clickfn()" value="按钮">
+      <div></div>
+      
+</body>
+</html>

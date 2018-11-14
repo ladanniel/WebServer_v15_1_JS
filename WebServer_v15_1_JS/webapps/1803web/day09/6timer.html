@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <style type="text/css">
+     img{
+         width: 150px;
+         height: 100px;
+         position: absolute;
+         left: 0px;
+     }
+     </style>
+    <script type="text/javascript">
+                   //开启定时器 第一个参数是函数，第二个参数是时间间隔
+                   var x = 0;
+                   var y = 0;
+                   var timerId = setInterval(function(){
+                	   
+                	   var img = document.getElementById("myimg");
+                   	//得到初始位置，此处必须加强制转换为int类型整数
+                    //var x = parseInt(img.style.left);
+                   	//此处的x为NaN;
+                   	//所以判断x是不是一个数
+                	 /*   if(isNaN(x)){
+           				x = 0;
+           			} */
+
+                   	
+                   	if(y==0){
+                   		x+=1;
+                   		
+                   	if(x==200){
+                   		y=1;
+                    	}
+                   	
+                	}else {
+                   		x-=1;
+                   		
+                   		if(x==0){
+                   			y=0;
+                   		}
+                   	}
+                	img.style.left = x+"px";
+                   },10); 
+                  
+                 
+                   
+    </script>
+</head>
+<body>
+      <img id="myimg" alt="" src="./d.jpg">
+
+</body>
+     </html>

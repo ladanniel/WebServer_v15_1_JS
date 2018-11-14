@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+       <!-- 注：不能在引入js文件的标签内写js代码 -->
+     <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+     <script type="text/javascript">
+               /* 加载完成事件 （原本写法） onload = function(){} */
+               
+               /* JQuery加载完成事件，复杂版  $(document).ready(function(){}); */
+               
+               //简单版本
+               $(function(){
+            	   $("#mb").click(function(){
+            		   /* alert($("#mi").val("HEllo")); */
+            		   //通过js形式得到js对象
+            		   var mi = document.getElementById("mi");
+            		   alert(mi.value);
+            	     // $("mi").val();
+            	    //把js对象转换成jq对象
+            	    var $jq = $(mi);
+            	    alert($jq.val())
+            	   });
+               });
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            /*  $(function(){
+            	 //得到按钮并绑定点击事件
+            	 $("#mb").click(function(){
+            		// alert("按钮点击了")
+            		alert($("#mi").val());
+            	 });
+            	 }); */
+     </script>
+</head>
+<body>
+       <input type="text" id="mi">
+       <input type="button" id="mb" value="按钮">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+             function autocreate(){
+            	 var line = document.getElementById("rows").value;
+            	 var list = document.getElementById("cols").value;
+            	 var test = document.getElementById("test");
+            	 var table = "<table border='1px solid red'>";
+            	 for(var i = 1;i<=line;i++){
+            		 table+="<tr>";
+            		 for(var j = 1;j<=list;j++){
+            			 table+="<td>"+line+"行"+list+"列"+"</td>";
+            			
+            		 } 
+            	 }
+            	 table+="</table>";
+            	 document.write(table);
+            	 test.innerHTML = table;
+            	 
+            
+             }
+
+
+
+</script>
+</head>
+<body>
+ <div>
+     <p>请输入行：<input id="rows"></p>
+     <p>请输入列：<input id="cols"></p>
+     <button onclick="autocreate()">创建</button>
+     <div id="test"></div>
+ </div>
+</body>
+</html>

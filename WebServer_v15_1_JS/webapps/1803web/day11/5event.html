@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+                           
+                          function divfn(){
+                        	  var obj = event.target||event.srcElement;
+                        	  alert(obj.nodeName);
+                          }
+
+</script>
+         <style type="text/css">
+           div,p,input{
+           
+                         border: 1px solid red;
+           }
+       
+         </style>
+</head>
+<body>
+      <div  onclick="divfn()">
+           <p>
+               <input type="button" value="按钮" onclick="btn()" >
+           </p>
+      </div>
+
+</body>
+</html>

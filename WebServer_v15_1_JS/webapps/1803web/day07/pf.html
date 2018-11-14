@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+                      
+                        function pf (){
+                        	   /* 获取文本框 */
+                        	   var numberInput = document.getElementById("numberinput");
+                        	   /* 获取文本框内容 */
+                       	   var number= numberInput.value;
+                        	   /*判断是不是数字*/
+                       	   if(!isNaN(number)){
+                        		  
+                        		   /*得到结果的div  */
+                       		   var numberInput = document.getElementById("numberinput");
+                        		   /* 把平方根的结果显示到div中 */
+                        		   resultDiv.innerText = number*number;
+                        	   }else{
+                        		   alert("输入错误");
+                        	   }
+                        	   
+                           } 
+                         
+</script>
+</head>
+<body>
+     <input id="numberinput" type="text">
+     <input type="button"  onclick="pf()" value="平方">
+     <div id="resultDiv"></div>
+     
+
+</body>
+</html>

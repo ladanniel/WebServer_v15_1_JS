@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+       <style type="text/css">
+               #mydiv{
+                      width: 100px;
+                      height: 100px;
+                      position: absolute;
+                      border: 1px solid red;
+               }
+       </style>
+       <script type="text/javascript">
+    /*    var x = 0;
+                onclick = function(){
+                	x+=50;
+                	console.log(x);
+                	var d = document.getElementById("mydiv");
+                	/* 设置元素左侧窗口50px */
+               /*  	d.style.left = x+"px";
+                	
+                }
+                 */ 
+                 var m = 0; 
+                onclick = function(){
+                var x = document.getElementById("mydiv");
+                	console.log("失去焦点");
+                	  m+=50;
+               	   console.log(m);      
+               	    if(m>50){
+               	     x.style.left=m+"px";	
+               	    }else if(m==1000){
+               	     y.style.left="0px";
+               	    	
+               	    }
+               	   
+                }
+                 
+                onfocus = function(){
+                	
+             	   console.log("焦点来了");
+             	   var y = document.getElementById("mydiv");
+
+             	 y.style.left="0px";
+             	   }
+               
+       </script>
+</head>
+<body>
+      <div id="mydiv">
+                 
+      </div>
+</body>
+</html>

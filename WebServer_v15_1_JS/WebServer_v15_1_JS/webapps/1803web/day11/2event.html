@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+            div{
+                width:100px;
+                height: 100px; 
+                background-color: green; 
+            }
+            img{
+                 width: 50px;
+                 height: 50px;
+                 position: absolute;
+            }
+          
+</style>
+<script type="text/javascript">
+                         function down(event){
+                       	    console.log("鼠标按下了");
+                        	console.log("x:"+event.clientX+";y:"+event.clientY)
+                        	
+                        }  
+                         
+                        function up(){
+                       
+                        	/* console.log("鼠标松开了");// console日志输出 */
+                        } 
+                        function move(){
+                        	 console.log("鼠标移动啦") 
+                      
+                        }
+                        
+                       onmousedown =  function(event){
+                        	
+                        	var img = document.createElement("img");
+                        	//给元素添加图片
+                        	img.src="1.jpg";
+                        	//添加到页面中
+                        	document.body.appendChild(img);
+                        	//给图片设置位置
+                        	img.style.left = event.clientX-25+"px";
+                        	img.style.top = event.clientY-25+"px";
+                        	
+                        	
+                        }
+                       
+</script>
+</head>
+<body> 
+      <div onmousedown="down(event)" onmouseup="up()" onmousemove="move()"></div>
+       
+      
+      
+</body>
+</html>

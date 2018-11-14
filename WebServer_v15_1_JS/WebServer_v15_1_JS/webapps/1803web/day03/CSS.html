@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+      <style type="text/css">
+          h2{color:blue; background-color: pink }
+       
+      </style>
+      <!-- 引入外部CSS文件link标签 rel=relation(关系) href="通常引用相对路径" -->
+      <link rel="stylesheet" href="first.css">
+      <link rel="stylesheet" href="first.css">
+      
+      
+      <style type="text/css">
+       .d1{ color: red; font-family:楷体;background: pink;font-size: 200%}
+       .d2{color: blue; font-family:隶书;background: graytext;font-size: 200%}
+      #divid{ color: gray;}
+      ul li a{color: purple;font-family: 华文行楷;font-size: 220%}
+       ul li #5{;color: yellow;}
+        ul>li>a{color: red;font-family: 楷体;font-size: 200%;}
+      
+      
+      </style>
+      
+</head>
+<body>
+      <div style="color: red ;border:1px solid blue">我是一个div</div><!-- 在标签内部加style -->
+      <h2>通过style标签引入CSS</h2>
+      <h2>第二个格式</h2>
+      
+      <h3>通过link引入样式文件</h3>
+      <h4>这样用户代理就会从 sans-serif 字体系列中选择一个字体（如 Helvetica），
+         </h4>
+        <div class="d1" >花落知道少</div>
+         <div class="d2" >春眠不觉晓</div>
+         <div class="d1">处处闻鸣鸟</div>
+         <div class="d2">夜来风雨声</div>
+         
+         <div id="divid" >春眠不觉晓</div>
+         <h2>后代选择器</h2>
+                          <a>城市</a>
+                                     <ul>
+                                         <li id="1">北京</li>
+                                         <li id="3"><a>成都</a></li>
+                                         <li id="5"><span><a>南京</a></span></li>
+                                      </ul>
+         
+         <h2>子元素选择器</h2>
+                          <a>城市</a>
+                                     <ul>
+                                         <li>北京</li>
+                                         <li><a>成都</a></li>
+                                         <li><span><a></a>南京</span></li>
+                                      </ul>
+         
+         
+      
+</body>
+</html>

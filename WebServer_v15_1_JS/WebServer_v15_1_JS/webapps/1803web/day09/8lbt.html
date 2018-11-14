@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+      div{
+          width: 800px;
+          height: 600px;
+      }
+      img{width: 800px;
+          height: 600px;
+      
+      }
+      div{
+          /* 超出范围不显示 */
+          overflow: hidden;
+      }
+      
+</style>
+       <script type="text/javascript">
+       var count = 0;
+                 setInterval(function(){
+                	 /* 得到图片中的所有元素 */
+                	 var imgs = document.getElementsByTagName("img");
+                	 /* 得到一个0-2循环增长的数 */
+                	 count++;
+                	 console.log(count%3);
+                	 /* 遍历每一张图片 */
+                	 for(var i = 0;i<imgs.length;i++){
+                		 //找到需要显示的元素
+                		 var img = imgs[i];
+                		 if(i==count%3){
+                			 img.style.display = "block";
+                			 
+                		 }else{//需要隐藏的元素
+                			 
+                			 img.style.display = "none";
+                		 }
+                	 }
+                 },1000);
+         
+       </script>
+</head>
+<body>
+       <div id="big">
+                   <img alt="" src="c.png">
+                   <img alt="" src="d.jpg">
+                   <img alt="" src="k.jpg">
+       
+       </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+              #big{
+                   width: 200px;
+                   height: 200px;
+                   background-color: purple;
+              }
+</style>
+<script type="text/javascript">
+     /*       //给窗口添加点击事件
+           window.onclick = function(){
+        	   alert("我在点击窗口了！");
+           }
+           //加载完成事件
+           window.onload = function(){
+        	   alert("加载完成！");
+        	   /* 放在这个位置，big加载完成 */
+     /*    	   var bigdiv  = document.getElementById("big");
+               bigdiv.innerText = "abc"
+           } */ 
+           /* 放在这个位置，big并未加载，程序执行顺序 */
+    	  /*  var bigdiv  = document.getElementById("big");
+           bigdiv.innerText = "abc" */
+           //添加获取焦点事件
+           onfocus = function(){
+        	   console.log("焦点来了");
+        	   }
+           //添加失去焦点事件
+           onblur = function(){
+        	   console.log("失去焦点");
+           }
+           onclick = function(){
+           location.href ="http://tmooc.cn/web/index_new.html?tedu";
+           
+           }
+           
+</script>
+</head>
+<body>
+      <div id="big"></div>
+      <input type="text">
+      <input type="text"  onclick="loaction.reload();"  value="刷新">
+      
+      
+</body>
+</html>

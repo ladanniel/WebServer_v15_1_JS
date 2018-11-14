@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+             <script type="text/javascript">
+      function deletelli(){
+    	  //得到被删除的元素，和被删除元素的上级
+      var sh = document.getElementByTagName("sh");
+    	  //上级
+      var ul = document.getElementById("ul")[0];
+    	  //上级
+      ul.removeChild(sh);
+      }
+      </script>
+      
+
+   
+</head>
+<body>
+      <input id="inx" type="text">
+     <input  type="button"  value="我是按钮">
+     <input  type="button" onclick="deleteli()"value="删除">
+     
+     <hr>
+     <ul>
+        <li>北京</li>
+        <li id="sh">上海</li>
+        <li>广州</li>
+     </ul>
+</body>
+</html>

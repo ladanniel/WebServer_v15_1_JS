@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+                  $(function(){
+                	  $(".group").click(function(){
+                		  if( $(this).children().css("display")=="none"){
+                			  $(".group>ul").css("display","none");//关闭所有
+                			  
+                			  $(this).children().css("display","block");//显示
+                		  }else{
+                			  $(this).children().css("display","none");//隐藏
+                		  }
+                	  })
+                  });
+
+</script>
+<style type="text/css">
+          .group>ul{
+                    display: none;
+          }
+</style>
+</head>
+<body>
+       
+     <ul onclick="clickfn()">
+    <li class="group">美女好友
+     <ul>
+         <li>杨幂</li>
+         <li>迪丽热巴</li>
+         <li>刘亦菲</li>
+         <li>李若彤</li>
+     </ul>
+     </li>
+      <li class="group">工作好友
+     <ul>
+         <li>苍老师</li>
+         <li>马云</li>
+         <li>王健林</li>
+         <li>李彦宏</li>
+     </ul>
+     </li>
+     
+     <li class="group">皇家马德里
+     <ul>
+     
+         <li>伊瓜因</li>
+         <li>罗纳尔多</li>
+         <li>卡卡</li>
+         <li>罗纳尔迪尼奥</li>
+     </ul>
+     </li>
+   </ul>
+</body>
+</html>

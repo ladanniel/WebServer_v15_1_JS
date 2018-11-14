@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+        <style type="text/css">
+               body{
+                         font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+                         font-size: 12px;
+                         color: rgb(102, 102, 102);
+                         background-color: rgb(245, 245, 245);
+                         margin: 0px;
+                        font-weight: normal;
+                        }
+               
+               #form_div{
+                          background-image: url("../images/regist.png");
+                          width: 100%;
+                          height: 560px;
+                          color: white;
+                       } 
+              #form_panel{
+                          width: 274px;
+                          padding: 8px;
+                          float: right;
+                          margin: 120px 111px 0 0;
+                          background-color: rgba(0,0,0,0.3);
+              }
+          #form_panel h2{
+                          margin: 0px;
+                          border-bottom: 1px solid white;
+                          padding: 8px;}
+              
+              
+           #form_panel>h2>a{
+                          font-size:13px;
+                          color: white;
+                          text-decoration: none;
+                          position: relative;
+                          left: 70px;
+                            }     
+          .field input{
+                          width: 234;/* 264-内边距20*2 */
+                          border: 0px;/*去掉边框*/
+                          padding: 10px 20px;
+          }  
+          
+          
+         /* 为了给图片定位 */ 
+         .field{position: relative;
+                margin: 15px 0px;}
+                
+  .field input{width: 234px;
+               border: 0px;
+               padding: 10px 20px;}
+  .field img{position: absolute;
+              top: 4px;
+              right: 10px;
+              }
+              
+       /* 错误提示内容 */
+   .field span{     
+                color: red;
+                position: relative;/* 对文本位置微调 */
+                top: 5px;
+          
+          }
+         
+         
+         #autologin_div>a{float: right;/* 让文本显示到最右侧 */
+                          color: white;
+                          text-decoration: none;}
+                          /* 让复选框下移动两个像素 */
+     #autoloin_div>input{position: relative;
+                    top: 4px;}
+         /* 按钮上下添加边距 */
+     #loginbtn_div{
+                         margin: 10px 0px;}               
+     #loginbtn_div input{
+                         
+                         width: 264px;/* 100%也可以写，代表上一级的宽度=264 */
+                         background-color: #27b0f6;
+                         border: 0px;
+                         color: white;
+                         height: 35px;
+                         border-radius:4px;   
+        }
+        </style>
+</head>
+<body>
+      <article>
+              <div id="form_div">
+                    <!-- 代表半透明区域 -->
+                 <div id="form_panel">
+                            <h2>登陆学子商城<a href="#">新用户注册</a></h2>
+                        <div class="field">
+                                 <input type="text" placeholder="请输入用户名">
+                                 <img alt="" src="../images/login/yhm.png">
+                                 <span>用户名不能为空</span>
+                         </div>
+                            
+                           <div class="field">
+                                 <input type="password" placeholder="请输入密码">
+                                 <img alt="" src="../images/login/mm.png">
+                                 <span>密码不能为空</span>
+                           </div>
+                              <div id="autologin_div">
+                                 <input id="autologin" type="checkbox"><label>自动登录</label>
+                                 <a href="#">忘记密码</a>
+                           </div>
+                               <div id="loginbtn_div">
+                                   <input type="submit" value="登录">
+                               
+                               </div>
+              
+                 </div>
+                                
+              </div>
+      </article>
+</body>
+</html>

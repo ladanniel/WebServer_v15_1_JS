@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+       <script type="text/javascript">
+            
+            function add(){
+            	var inputs = document.getElementById("inx");
+            	var ele = document.createElement("li");
+            	//给li添加内容
+          	  ele.innerText = inputs.value;
+            	var name = document.getElementsByTagName("ul")[0];
+            	//把li添加到ul里面
+            	name.appendChild(ele);
+          	  
+            }
+            
+       </script>
+</head>
+<body>
+      <input id="inx" type="text">
+     <input  type="button" onclick="add()"   value="我是按钮">
+     <hr>
+     <ul>
+        <li>北京</li>
+        <li>上海</li>
+        <li>广州</li>
+     </ul>
+
+</body>
+</html>

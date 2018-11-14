@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script type="text/javascript">
+      <!-- 两种创建字符串的方式 -->;
+//      var str1 =  "hello";
+  //    var str2 = new String("hello");
+      /* 字符串转换大 、小写 */
+      /* alert(str1.toUpperCase()); */
+ //     alert(str1.toLowerCase());
+      // alert(str1.toLowerCase());修改大小写函数并没有对原字符串进行修改，函数返回值是修改完之后的字符串；初始值并不会发生改变
+ //     alert(str1);
+      //查询指定字符出现的位置；
+   //   var str4 = "abcdefghijklmn";
+     // alert(str4.indexOf("a"));
+   //   alert(str4.lastIndexOf("n"));
+      /* 截取字符串 :从哪里到哪里，不包含最后的*/
+  //    alert(str4.substring(2,5));
+      /* 第二个参数可以省略,从某个位置截取到最后 */
+  //    alert(str4.substring(2));
+      /* 替换字符串 替换的第一次出现的 */
+ //     alert(str4.replace("d","5"));
+      /*拆分字符串  */
+      var str5 = "天苍苍野茫茫风吹草地现牛羊"
+      var arr = str5.split("茫");
+      alert(arr)
+      
+      /* 保留几位小数，并四舍五入 */
+      
+      var num = 3.147;
+      alert(num.toFixed(2));
+      
+      function add(){
+    	  var input = document.getElementById("myinput");         //得到input中的内容
+    	  var resultDiv = document.getElementById("result");      //得到result的内容
+    	  var str = "<a href='#'>[content]</a>"                   //用站位文本，把标签内容先站上位置
+    	   //alert(str.replace("[content]",input.value))            //把用户输入的内容替换进去；
+    	  //把替换后的内容添加到div中
+    	   resultDiv.innerHTML +=str.replace("[content]",input.value);
+    	  
+    	  
+      }
+      
+</script>
+</head>
+<body>
+      <input type="text" id="myinput" >
+      <input type="button" value="添加超链接" onclick="add()">
+      <div id="result"></div>
+          
+</body>
+</html>

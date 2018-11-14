@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+         <script type="text/javascript">
+              function addx(){
+            /* 	 var line = 3;//(tr)
+            	 var list = 2;//(td) */
+            	 
+            	CT(3,2);
+              } 
+              function addy(){
+                  /* 	 var line = 3;//(tr)
+                  	 var list = 2;//(td) */
+                  	 
+                  	CT(5,6);
+                    } 
+              function addz(){
+                  /* 	 var line = 3;//(tr)
+                  	 var list = 2;//(td) */
+                  	var rowline = document.getElementById("line");
+                  	 var collist = document.getElementById("list");
+                  	 var line = parseInt(rowline.value);
+                  	 var list = parseInt(collist.value);
+                    } 
+              function CT(line,list){
+            	  var table = document.createElement("table");
+            	  for(var i=0;i<line;i++){
+             		 var tr = document.createElement("tr");
+             		 for(var j = 0;j<list;j++){
+             			 var td = document.createElement("td");
+             			 td.innerText=(i+1)+"行"+(j+1)+"列";         //给td设置显示内容
+             			 tr.appendChild(td); 
+             		     td.style.border= "1px solid red";
+             		 }
+             		 //把tr添加到table里
+             		 table.appendChild(tr);
+             		 tr.style.border= "1px solid red";
+             		
+             	 }
+            	   table.setAttribute("border","1");
+            	  //table.style.border = "1px solid green"; 
+            	  //清除表格之间的间距；
+            	  table.setAttribute("cellspacing","0");
+            	  
+             	 document.body.appendChild(table);
+              }
+         </script>
+
+</head>
+<body>
+          <input type="button"  onclick="addx()" value="创建3行2列">
+          <input type="button"   onclick="addy()" value="创建5行6列">
+    行数：<input id="line" type="text" > 
+    列数：<input id="list" type="text" > 
+          <input type="button"  onclick="addz()" value="创建表格">
+  
+       
+           
+       
+
+</body>
+</html>

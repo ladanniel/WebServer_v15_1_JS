@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    
+     table{
+            
+            width:300px;
+            height:200px;
+            margin:200px 500px 500px 500px;
+           background-color:purple;
+            border:1px solid red;
+            font-size:120%;
+            color: white;
+            
+     }
+     
+     #dis{
+        width: 100%;
+        height: 30px;
+        font-weight: bold;
+        font-family: 黑体;
+        padding-left: 2px;
+    }
+     tr td{text-align: center;
+           cursor: pointer;}
+        td{
+           
+           font-weight: bold;
+           font-family: "黑体";
+           
+          
+}
+</style>
+       <script type="text/javascript">
+       var results="";                                               /* 把内容串起来,+*/
+         function cal(){
+        	 if (event.srcElement.innerText=="=") {   //当输入等号的时候显示结果，但是结果会被cal覆盖，所以添加判定条件
+                 return;
+             }
+        	 if (event.srcElement.innerText=="c") {    //当点击C时，元素归零
+                 results="";
+                 dis.innerText="0";
+                 return;
+             }
+        	  results+=event.srcElement.innerText;                   /* 当鼠标点击某个单元格时我们能获取这个单元格
+                                                    上的内容,event.srcElement.innerText获取单元格上的内容 ,results就是单元格的内容*/
+        	  dis.innerText=results;                                /* innerText，来输出这个点击的值 */
+       }
+         function resultscal(){                     //对等号后的内容进行判定
+             calresults=eval(results);
+             dis.innerText=calresults;
+           }
+       
+       </script>
+       
+</head>
+<body>  
+      <table cellspacing="1px" border="1px"  onclick="cal()">
+             
+              <tr>
+                <td id="dis" colspan="4" align="center">0</td>
+            </tr>
+            <tr>
+            <td>c</td>
+            <td>+/-</td>
+            <td>sum</td>
+            <td>cal</td>
+            </tr>
+            <tr >
+                <td >1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+            </tr>
+            
+             <tr>
+                
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+                
+            </tr>
+
+             <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>*</td>
+             
+            </tr>
+            
+             <tr>
+                
+                <td>0</td>
+                <td>.</td>
+                <td>/</td>
+                <td onclick="resultscal()">=</td>
+            </tr>
+             
+      
+      </table>
+
+</body>
+</html>

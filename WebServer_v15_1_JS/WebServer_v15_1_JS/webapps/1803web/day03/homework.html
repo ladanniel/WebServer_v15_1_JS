@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GBK">
+<title>Insert title here</title>
+</head>
+<body>
+      <!-- 隐藏id、用户名、密码、确认密码、昵称、性别、
+      爱好、生日、头像、所在城市、自我介绍、验证码 提交按钮、重置按钮 -->
+      <form action="">
+                     <table border="1" width="60%" align="center" cellspacing="0">
+                                      <caption><h1><b>注册表单</b></h1></caption>
+                                      <tr>
+                                          <td align="right" >用 户 名：</td>
+                                          <td><input  type="text" name="username" >
+                                              <input  type="hidden" name="id" value="111"> </td>
+                                      </tr>
+                                      <tr>
+                                           <td align="right">密   码：</td>
+                                          <td><input  type="password" name="password1" > </td>
+                                      </tr>
+                                       <tr>
+                                           <td align="right">确认密码：</td>
+                                          <td><input  type="password" name="password2" > </td>
+                                      </tr>
+                                      <tr>
+                                           <td align="right">昵    称：</td>
+                                          <td><input  type="text" name="nickname" > </td>
+                                      </tr>
+                                      <tr>
+                                           <td align="right">性    别：</td>
+                                          <td><input  id="男" type="radio" name="gender" >
+                                          <label for="男">男</label> 
+                               
+                                          <input  id="女" type="radio" name="gender" >
+                                          <label for="女">女</label> </td>
+                                      </tr>
+                                      <tr>
+                                           <td align="right">爱    好：</td>
+                                          <td><input  id="lq" type="checkbox" name="hobby" >
+                                          <label for="lq">篮球</label> 
+                                          
+                                          <input  id="yxlm" type="checkbox" name="hobby" >
+                                          <label for="yxlm">英雄联盟</label> 
+                                          <input  id="cj" type="checkbox" name="hobby" >
+                                          <label for="cj">吃鸡</label> 
+                                          <input  id="cf" type="checkbox" name="hobby" >
+                                          <label for="cf">CrossFire</label> 
+                                          <input  id="re" type="checkbox" name="hobby" >
+                                          <label for="re">红色警戒</label>
+                                          <input  id="sg" type="checkbox" name="hobby" >
+                                          <label for="sg">三国志</label> 
+                                          <input  id="qh" type="checkbox" name="hobby" >
+                                          <label for="qh">拳皇</label>
+                                          <input  id="dy" type="checkbox" name="hobby" >
+                                          <label for="dy">电影</label>
+                                          <input  id="yy" type="checkbox" name="hobby" >
+                                          <label for="yy">音乐</label>
+                                           </td>
+                                      </tr>
+                                      <tr>
+                                           <td align="right">生   日： </td>
+                                          <td><input type="date" name="birthday" >
+                                          
+                               
+                                       
+                                      </tr>
+                                      <tr>
+                                           <td align="right">头    像： </td>
+                                          <td><input type="file" name="pic" >
+                                          
+                               
+                                       
+                                      </tr>
+                                      <tr>
+                                           <td align="right">城市： </td>
+                                          <td>
+                                              <select name="city">
+                                                     <option>选择城市</option>
+                                                     <option value="bj">北京</option>
+                                                     <option value="sh">上海</option>
+                                                     <option value="gz">广州</option>
+                                                     <option value="sz">深圳</option>
+                                                     <option value="cd">成都</option>
+                                                     <option value="nj">南京</option>
+                                                     <option value="hz">杭州</option>
+                                                     <option value="xm">厦门</option>
+                                                     <option value="fz">福州</option>
+                                                     <option value="xz">徐州</option>
+                                                     <option value="cq">重庆</option>
+                                                     <option value="km">昆明</option>
+                                              </select>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                           <td align="right">自我介绍：</td>
+                                           <td><textarea rows="3" cols="100" name="intro">说出你想说的、、、、</textarea>
+                                           </td>
+                                      </tr>
+                                      <tr>
+                                          <td align="right">验证码：</td>
+                                          <td><img width="80px" height="20px" src="52.jpg"></td>
+                                      </tr>
+                                      <tr >
+                                          <td colspan="2" align="center">
+                                          <input type="submit" value="注册">
+                                          <input type="reset" value="重置"></td>
+                                        
+                                      </tr>
+                                      
+                     </table>
+      </form>
+</body>
+</html>

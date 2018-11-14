@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+      <script type="text/javascript">
+      function insert(){
+      	var inputs = document.getElementById("inx");
+      	var ele = document.createElement("li");
+      	//给li添加内容
+    	  ele.innerText = inputs.value;
+      	//得到他爸的ul
+      	var ul = document.getElementsByTagName("ul")[0];
+      	//得到新添加元素的弟弟
+      	var old = document.getElementById("sh");
+      	//把li插入到ul里面
+    	ul.insertBefore(ele,old);
+      }
+      </script>
+</head>
+<body>
+        <input id="inx" type="text">
+     <input  type="button"  value="我是按钮">
+     <input  type="button" onclick="insert()"   value="插入">
+     <hr>
+     <ul>
+        <li>北京</li>
+        <li id="sh">上海</li>
+        <li>广州</li>
+     </ul>
+      
+
+</body>
+</html>

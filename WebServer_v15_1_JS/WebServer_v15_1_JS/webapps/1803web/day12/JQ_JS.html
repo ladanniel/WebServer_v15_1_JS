@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+ <script type="text/javascript">
+        $("#jqjs").click(function(){
+        	var $jq = $("mi");//得到jq对象
+        	var js1 = $jq[0];  //把jq对象转成js对象，第一种
+        	var js2 = $jq.get(0); //把jq对象转成js对象，第二种
+        	alert(js1.value+"="+js2.value);
+        })
+        $("#jqjs").click(function(){
+        	var $jq = $("mi");
+        	var js1 = $jq[0];
+        	var js2 = $jq.get(0);
+        	alert(js1.value+"="+js2.vlue);
+        });
+ </script>
+</head>
+<body>
+            <input type="text" id="mi">
+           <input type="button" id="mb" value="按钮">
+           <input type="button" id="jqjs" value="JS转JQ">
+</body>
+</html>

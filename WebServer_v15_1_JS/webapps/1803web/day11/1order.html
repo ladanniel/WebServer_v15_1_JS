@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><!-- 订单练习 -->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+                             function allfn(){
+                            	 
+                            	 var allinp = document.getElementById("all");//先得到全选标签
+                            	 var ite = document.getElementsByName("item");//得到所有商品input
+                            	
+                            	 for( var i=0;i<ite.length;i++){
+                            		 ite[i].checked = allinp.checked;          //让每一个input的状态等于全选状态
+                            	                              	     }
+                            	 
+                            	 cal();//计算金额
+                             }
+                             function cal(){
+                            	 var ite = document.getElementsByName("item")
+                            	 var totalmoney = 0;
+                            	 for(var i = 0;i<ite.length;i++){
+                            		var item = ite[i];
+                            		console.log(item.checked);
+                            		if(item.checked){//判断选中状态
+                            			var money = parseFloat(item.value);//得到选中的金额
+                            			totalmoney+=money;
+                            		}
+                            	 }
+                            	 var p = document.getElementsByTagName("p")[0];
+                            	 p.innerText = "总价:"+"￥"+totalmoney;
+                            	 
+                             }
+                            
+ 
+</script>
+
+                           
+</head>
+<body>
+     <h1>购物车订单练习</h1>
+     <input onclick="cal()" name="item" type="checkbox"  value="5000.00" >  华为手机￥5000.00<br>
+     <input onclick="cal()" name="item" type="checkbox" value="50.00">    手机壳￥50.00<br>
+     <input onclick="cal()" name="item" type="checkbox" value="5.00">    手机链￥5.00<br>
+     <input onclick="cal()" name="item" type="checkbox" value="10.00">    手机膜￥10.00<br>
+     <input onclick="cal()" name="item" type="checkbox" value="100.00">  移动手机卡￥100.00<br>
+      <input id="all" type="checkbox" onclick="allfn()">全选<br>
+       <p>总价:</p>
+
+</body>
+</html>

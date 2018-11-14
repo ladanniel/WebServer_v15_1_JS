@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+       <style type="text/css">
+         #divd{
+              width: 500px;
+              height: 200px;
+              background-color: yellow;  
+         }
+         .m{
+             width: 100px;
+             height: 100px;
+             background-color: blue;
+             float: left;
+         }
+         .s{width: 100px;
+             height: 100px;
+             background-color: purple;
+             float: left;}
+             /* 方法二 添加 m0 和 m1{} */
+       </style>
+       <script type="text/javascript">
+               var divx=[];
+             function add(){
+            	 var divx =document.getElementById("divd");
+            		 	
+            		for(var i=0;i<=9;i++){
+            			if(i%2==0){
+            				divx.innerHTML +="<div class = 's'>"+i+"</div>";
+            			}
+            			if(i%2==1){
+            				divx.innerHTML +="<div class = 'm'>"+i+"</div>";
+            				
+            			}
+            			
+            			//方法二：divx.innerHTML +="<div class = 'm "+i%2+"'>"+i+"</div>";
+            			
+            		}
+             }
+       </script>
+</head>
+<body>
+     <input type="button" onclick="add()" value="添加元素">
+     <div id="divd"></div>
+
+</body>
+</html>

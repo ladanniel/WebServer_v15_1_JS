@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+        <script type="text/javascript">
+        /* 创建一个复用的函数 */
+                          function cal(flag){
+                        	  /* 得到两个文本输入框 */
+                         var intput1 = document.getElementById("input1");
+                         var intput2 = document.getElementById("input2");
+                         var resultdiv = document.getElementById("resultdiv");
+                         /* 把用户输入的内容强制转换成数字 */
+                         var n1 = parseFloat(input1.value);
+                         var n2 = parseFloat(input2.value);
+                         var resultNumber=0;
+                         switch(flag){
+                         case 1:resultNumber = n1+n2;
+                        	 break;
+                         case 2:resultNumber = n1-n2;
+                        	 break;
+                         case 3:resultNumber = n1*n2;
+                             break;
+                         case 4:resultNumber = n1/n2;
+                             break;
+                          
+                          }
+                        
+                          /* 把结果显示到div中 */
+                          resultdiv.innerText ="结果 "+resultNumber;
+        }
+        
+        
+        
+        
+                       //    function add(){
+                        	  /* 得到两个文本输入框 */
+                         //var intput1 = document.getElementById("input1");
+                         //var intput2 = document.getElementById("input2");
+                         //var resultdiv = document.getElementById("resultdiv");
+                         /* 把用户输入的内容强制转换成数字 */
+                       //  var n1 = parseFloat(input1.value);
+                        // var n2 = parseFloat(input2.value);
+                         //var resultNumber = n1+n2;
+                         /* 把结果显示到div中 */
+                        // resultdiv.innerText ="结果 "+resultNumber;
+                          
+                         // } 
+                          
+                          
+        </script>
+</head>
+<body>
+     <input id="input1" type="text">
+     <input id="input2" type="text">
+     <hr>
+     <input type="button"  onclick="cal()"  value="cal(1)">
+     <input type="button"  onclick="cal()"  value="cal(2)">
+     <input type="button"  onclick="cal()" value="cal(3)">
+     <input type="button"  onclick="cal()"  value="cal(4)">
+     <hr>
+     <div id="resultdiv">结果</div>
+
+</body>
+</html>

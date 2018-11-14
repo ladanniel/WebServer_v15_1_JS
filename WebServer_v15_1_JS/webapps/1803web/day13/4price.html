@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+//绑定 $(function)
+         $(function(){
+        	 //绑定事件
+        	 $("input[value = '加入购物车']").click(function(){
+        		/*  alert("按钮点击了"); */
+        	var name=$(this).parent().siblings().eq(0).text();
+        		alert(name);
+        		/* alert(name); */
+            var price=$(this).parent().siblings().eq(1).text();
+    		alert(price);
+    		//创建tr,td
+    		var $tr = $("<tr></tr>");
+    		var $nametd = $("<td>"+name+"</td>");
+    		var $pricetd = $("<td>"+price+"</td>");
+    		var $counttd =$("<td><input type='button' value='-' onclick='subfn(this)'> <span>1</span><input type='button' value='+' onclick='addfn(this)'></td>"); 
+    		var $moneytd =$("<td>"+price+"</td>"); 
+    		var $deltd =$("<td><input type='button' value='删除' onclick='del(this)' </td>"); 
+    		//把td装tr
+    		$tr.append($nametd);
+    		$tr.append($pricetd);
+    		$tr.append($counttd);
+    		$tr.append($moneytd);
+    		$tr.append($deltd);
+    		
+    		//把td装table里面的总价上面
+    		$("#total").before($tr);
+    		
+    		calfn(); 
+        	 });
+        	 });
+        	 function del(btn){
+        		 $(btn).parent().parent().remove();
+        		 calfn();
+        		 
+        	 }
+        	 
+        	 //数量加事件,通过按钮找到1
+        	 
+        	function addfn(btn){
+        		 //去除当前数量+1
+        	  var count = $(btn).prev().text();//enent.target也可以得到事件源
+        	  count++;
+        	  //再放回去
+        	  $(btn).prev().text(count);
+        	  //得到单价
+        	  var price = $(btn).parent().prev().text();
+        	  //显示单价*数量
+        	  $(btn).parent().next().text(count*price);
+        	  
+        	  calfn();
+        	}
+        	 
+        	 
+        	function subfn(btn){
+       		 //去除当前数量+1
+       	  var count = $(btn).next().text();
+       	  count--;
+       	  //再放回去，同时数值不能小于0
+       	  if(count<=0){
+       		  return false;
+       	  }
+       	$(btn).next().text(count);
+      //得到单价
+  	  var price = $(btn).parent().prev().text();
+  	  //显示单价*数量
+  	  $(btn).parent().next().text(count*price);
+  	  
+  	calfn();
+  
+       	}
+        	//计算总价
+        	function calfn(){
+        		var total=0;
+        		//得到第二个表中所有的tr并遍历，this代表当前遍历的内容
+        		$("table:eq(1) tr").each(
+        				function(){
+        			var $moneytd = $(this).children().eq(3);
+        			var money = parseFloat($moneytd.text());
+        			if(!isNaN(money)){//找到数
+        				total+=money;
+        			}
+        		});
+        		//总价
+        		$("#total td").text("总价"+total);
+        	}
+        	
+</script>
+<style type="text/css">
+          body{
+               text-align: center;
+          }
+          table{
+                 width: 80%;
+                 margin: 0 auto;
+                 border: 1px solid red;
+                 /* 让表格边框和单元格边框合并 */
+                 border-collapse:collapse;
+          }
+          td,th{
+                 border: 1px solid red;}
+            #total{
+                  text-align: left;
+            }
+</style>
+</head>
+<body>
+        
+        
+       <h1>特价商品</h1>
+     <table id="tax">
+            <tr>
+                <th>商品名称</th>
+                <th>商品单价</th>
+                <th>商品库存</th>
+                <th>好评率</th>
+                <th>操作</th>
+            </tr>
+            
+            <tr>
+                <td>水杯</td>
+                <td>25</td>
+                <td>3</td>
+                <td>89%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+            
+             <tr>
+                <td>笔记本</td>
+                <td>6000</td>
+                <td>10</td>
+                <td>90%</td>
+                <td><input type="button"   value="加入购物车"></td>
+            </tr>
+             <tr>
+                <td>机械键盘</td>
+                <td>150</td>
+                <td>10</td>
+                <td>80%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+             <tr>
+                <td>鼠标</td>
+                <td>120</td>
+                <td>10</td>
+                <td>70%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+            <tr>
+                <td>贴膜</td>
+                <td>80</td>
+                <td>10</td>
+                <td>80%</td>
+                <td><input type="button"  value="加入购物车"></td>
+            </tr>
+     </table>
+     <h1>购物车</h1>
+     <table id="sum">
+            <tr>
+                <td>商品名称</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>金额</td>
+                <td>操作</td>
+            </tr>
+            <tr id="total">
+                <td  colspan="5">总价：</td>
+            </tr>
+     </table>
+</body>
+</html>

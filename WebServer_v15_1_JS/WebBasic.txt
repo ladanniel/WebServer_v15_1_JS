@@ -1,0 +1,301 @@
+第四部分：Web前端
+一、web前端：
+1、服务器：就是一台高配置的电脑；
+2、右键服务器：在一台高配置电脑上，安装了提供邮件服务的软件，这台电脑称为右键服务器；提供邮件收发功能；
+3、ftp服务器：提供文件共享的软件，在高配置电脑上，安装了ftp软件，这台电脑称为ftp服务器；提供文件上传，下载功能
+4、web服务器：webServer（web服务器），在高配置电脑上，安装了web软件，这台电脑称为web服务器；提供了具有复杂逻辑的数据共享功能
+5、因为开发的软件是，网络服务软件，，所有称为java网络工程师，或java软件工程师
+6、网络服务软件的架构分类：
+     从访问者的角度（浏览器和客户端）划分：
+     CS:Client Server客户端和服务器:如：iOS，Android，Windows，Linux等等：优点，简单快捷，用户体验度高；
+     |-服务器端具备的功能：给客户端返回对应的数据；
+     BS:Browser,Server 浏览器和服务端                                     优点：跨平台（Windows，Linux的浏览器等），功能升级便捷
+     |- 服务器端具备的功能：给浏览器返回数据和页面（html，css,js）；
+    
+    网站：网站是指：BS架构的web服务软件，包括：前端页面--->逻辑部分--->数据存储（数据库）
+    
+    前端：html、css、js、jQuery
+    业务逻辑部：javaSE，servlet（取代javaSE实现的功能），Springmvc(取代servlet)（Mybatis框架（取代JDBC），Spring（整合业务逻辑框架部分），三大框架）
+    数据存储：  io流文件存储、数据库（取代IO流文件存储）
+    
+    JDBC
+  二、  前端课程内容：
+  1、HTML：用来勾勒出网页的结构和内容（骨架）；
+  2、CSS ：样式，美化页面；
+  3、JavaScript：让页面呈现出动态的效果和动态的数据；
+  4、JQuery:用来简化JavaScript；
+  
+  HTML:概述
+  一、
+  xml：可扩展标记语言；
+  m:markup,标记
+  l:language：语言
+  h:hyperText:超文本
+  hyper Text Markup Language：超文本标记语言，是一门网页制作语言；HTML相当于是标签和属性固定的xml
+  超文本：不仅仅包含纯文本，还包括文本的字体、样式、颜色等，以及多媒体（图片、、音频、视频）
+  二、HTML学习内容
+   1：学习有那些固定的标签；
+   2：学习标签内部有那些固定的属性；
+   3：学习标签和标签的嵌套关系；
+  xml格式：
+<!DOCTYPE html> ------------------>文档声明，告诉浏览器用HTML那个版本的标准去解析页面，按照HTML5的标注去解析
+<html>         ------------------->除了声明所有内容都在HTML里面包括两个根标签head和body
+<head>         ------------------->内容，用户是看不到的，是告诉浏览器解析当前页面时的注意事项，给浏览器看到的内容写在这里  
+<meta charset="UTF-8"> ----------->页面源数据标签（页面基础相关信息），charset="UTF-8"：指定字符集，文件保存时和浏览器解析数据时使用的字符集，优化页面，给爬虫用到
+<meta name="keywords" content="java培训，iOS培训，UI培训" >--->设定页面的关键字，合理使用此内容能够让很多的用户访问得到（提高搜索引擎爬虫找到此页面的概率），给爬虫用到 
+<title>Insert title here</title>-->标题标签，设置网站的标题，和关键字有相同的作用，有利于SEO优化（搜索引擎优化）
+</head>
+<body>         ------------------->体标签，展示给用户的所有内容都在body里面
+
+</body>       
+</html>
+
+   4：body内部出现的常用标签
+ 4.1标题标签：<h1></h1>.......<h6></h6>
+ 4.2常用属性：align="center"用来控制标签内容的对其方式
+***** 第一天****
+***** 第一节****
+***** 第二节****
+ 4.3<p></p>:此标签的上面和下面有空行，段落标签
+  4.1列表标签：
+1.无序列表 ul unordered-list,li list-item(列表项)
+     - 格式：
+     <ul>
+         <li></li>
+         <li></li>
+         <li></li>
+      </ul>
+      常见属性：type 用来控制每一项前面的内容（实心圆，空心圆，方块）
+  4.2 .有序列表
+ <ol   statr="3" reversed="reversed">
+             <li>打开冰箱</li>
+             <li>把大象装冰箱</li>
+             <li>关上冰箱门</li>
+         </ol>
+      常见属性：type，start,reversed(反转)
+ 3.列表嵌套：
+   学了那些知识：
+   1.变量
+   2.数据类型
+   3.运算符
+   4.三种循环结构
+ 4.***分区标签***
+  |-页面中可以划分多个显示区域，被划分的区域可以进行复用，或对区域内部的所有内容进行统一管理。
+   |-分区元素(标签)本身没有任何显示效果，可以理解成一个容器；
+  4.1：div  :块级分区，一个div独占一行；
+  4.2：span:行内分区，可以和多个元素共占一行；
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <span>span1</span>
+  <span>span2</span>
+  <span>span3</span>
+  |-通常一个页面中可以分为三大分区：
+    |-<body>
+            <div>顶部区域（头部）</div>
+            <div>体部区域</div>
+            <div>底部区域（尾部）</div> 
+      </body>
+   4.3HTML5标准中新增了几个分区标签：
+ 4.3.1：header：头部
+ 4.3.2：article：正文、文章区域
+ 4.3.3：footer
+ 4.3.4：nav
+        <body>
+            <header>头部区域</header>
+            <nav>导航区域</nav>
+            <article>正文区域</article>
+            <footer>尾部区域</footer> 
+      </body>
+ 5：标签（元素）分类：
+   5.1：块级元素：独占一行的元素；
+       例如：<div>div1</div>、<p></p> 、<h1-6></h1-6> <hr>(分割线)
+   
+   5.2：行内元素：可以和其他元素共用一行的元素； 
+       例如：<span></span> 、<i></i>和<em></em>：(字体斜体) 、<b></b>和<strong></strong>(加粗)<u></u>(下划线) <del> </del>和<s></s>(删除线)  
+        
+ 6:换行标签：
+    <br>
+ 7:行内元素空格折叠现象
+   在一行内如果连续多个空格，只会显示一个空格
+  如果有需求显示多个空格，需要把空格替换成&nbsp
+ 8:常见特殊字符：
+ -空格 ：&nbsp
+   <   : &lt
+   >   :&gt
+ 9:图片标签，单标签
+   9.1 格式-：<img src="路径">
+      |-路径分为绝对路径和相对路径
+     |-相对路径：相对于当前页面的位置；同级直接写图片名，存在子目录a子目录则相对路径为：a:a/b.jpg；如果是存在上级目录中则相对路径为：../../c.png
+      |-绝对路径分为两种：
+       |-磁盘路径：c:/imgs/a.jpg 出于安全考虑，通常web服务器软件不允许访问工程之外的资源
+       |-网址路径：http://www.abc.com/a.jpg
+ —路径总结：
+  工作中，本网站的图片资源，一般都是用相对路径，如果访问网站外部资源则使用绝对路径
+  9.2常见属性：src:路径
+               alt:当图片不能正常显示的时候，显示alt属性的值
+      title：图片的描述信息；鼠标悬停显示内容
+      width/height：宽高属性，值为 像素（单位px）或百分比(单位%),如果只设置宽度，则高度会按照原始比例缩放；
+  支持的图片格式：jpg（不支持透明色）、png（支持透明色）、gif（动图）、
+         
+ 10：图床：行业内称专门提供网页图片的网站，称为图床
+     优点：不需要占用自己服务器资源；
+     劣势：图床网站路径改变后图片无法显示；
+ 11.图像地图
+ <img alt="tup" src="c.jpg" width="800px" usemap="#mymap">
+     <map name="mymap"id="mymap">
+	<area alt="圆形" shap="cicle" coords="200,200,50" href="resume.html(相对绝对路径)">
+	<area alt="矩形" shap="rect" coords="0,0,50,50" href="http://doc.tedu.cn">
+   
+</map>
+   如果使用shape=rect,coords的值所代表的意思是左上角的x和y，还有右下角的坐标x和y
+   如果j shape=circle coords值表示圆心坐标（x/y），和半径，
+  href属性：值为一个路径，相对路径和绝对路径，区域被点击时会直接访问此路径的内容，路径可以指向页面
+  也可以指向图片资源，也可以指向其他类型的文件会下载此文件
+ 12.在网页中经常使用超链接进行连接导航，语法：
+  <a herf="src（路径）">链接</a>
+  <target>属性：控制从什么位置跳转；值为_self是从当前页面跳转（默认），值为_blank是跳转到一个新窗口显示页面
+ 12.1 a标签可以支持以下几种写法：
+  <a href="map2.html">
+  <a href="_blank">图像地图练习</a>
+  <a href="day01.zip">文件下载</a>
+  <a href="s.jpg">图片浏览</a>
+  
+ 13、 <a>标签锚点的使用
+  通过锚点可以实现页面内部位置的跳转
+  操作方式：
+  1：在页面中的某个位置设置锚点；
+  <a name="top" id="top"></a>
+  2：通过超链接跳转到锚点的位置
+  <a name="top" id="top" href="id/name"></a>
+  锚点练习：
+  
+  14、表格标签
+  什么是表格：由一些单元格的矩形框按照从左到右，从上到下的顺序排列组成的内容为表格
+  作用：以一定的结构来显示信息
+  表格的格式：
+  <table border="1">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>------------------>th:显示内容居中并加粗，其他跟td一样
+  </tr>
+  <tr>
+    <td>January</td>------------------>td:单元格
+    <td>$100</td>
+  </tr>
+</table>
+14.1表格的属性：
+   cellspacing：每个单元格之间的间距和单元格距离表格表格边框的距离
+   cellpadding：内容与单元格边框的距离
+   width/height：表格的宽高
+   border:边框的宽度
+14.2:表格属性：
+   colspan:column(列) span caption----标题
+ 14.3：分组标签：
+ 
+  在前端编程的时候，使用分组便于整体操作表格的头部、体部、和尾部
+   <h2>行分组</h2>
+       <table border="1">
+                       <thead>
+                             <tr>
+                                 <th>编号</th>
+                                 <th>名称</th>
+                                 <th>价格</th>
+                             </tr>                     
+                       </thead>
+          <tbody>
+                 <tr>
+                     <td>1</td>
+                     <td>键盘</td>
+                     <td>380</td>
+                 
+                 
+                 </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>鼠标</td>
+                     <td>120</td> 
+                 </tr>
+         </tbody>
+         <tfoot>
+               <tr>
+                   <td colspan="2">合计</td>
+                   <td>500元</td>
+               </tr>
+         
+         </tfoot>
+       </table>
+    
+    caption 标签:写在table标签内部，起到表格标题的作用
+    <table border="1">
+    <caption>订单列表</caption>
+    </table>
+    
+ *****15：表单，具有交互功能*****
+   1.表单作用：在浏览器中，浏览器向服务器发送数据，一般使用的都是表单。
+   1.1内部控件有：文本框，密码框，单选多选框，下拉列表，文件选择，时间选择，提交按钮 
+ 15.1：——文本框
+   用于获取用户输入的单行数据
+   格式：
+   <form action="提交地址">
+      用户名：<input type="text">
+   </from> 
+   属性：name type value maxlength(最大长度) readonly(只读)
+  15.2:——密码框：
+  格式：
+   <form action="提交地址">
+      密码：<input type="password">
+   </from>
+  15.3：——单选框
+    格式：性别<input type="radio">男<input type="radio">女
+    属性：name：多个单选的控件的name值要一致，value提交数据时会把value的值提交到服务器
+       checked：设置选中
+  15.4：——复选框
+   爱  好：<input type="checkbox" name="hobby" value="tq">台球 <input type="checkbox" name="hobby" value="yxlm">英雄联盟
+           <input type="checkbox" name="hobby" value="lq">篮球 <input type="checkbox" name="hobby" value="ppq">乒乓球
+           <input type="checkbox" name="hobby" value="dy">电影 <input type="checkbox" name="hobby" value="yy">游泳
+   15.5 标签：label
+    <input id="tq" type="checkbox" name="hobby" value="tq"><label for="tq">台球</label>
+  15.6：——文件选择格式：
+  ——选择需要上传的文件：
+       靓   照：<input type="file" name="pic">
+  15.7：——日期格式
+    生  日：<input type="date" name="birthday">
+  15.8：——隐藏域；
+  -格式：
+  <div>
+       <input type="hidden" name="id" value="1">
+       
+       </div>  
+  —作用：此控件用户看不到，有些场景需要提交一部分用户不需要看到的数据，比如修改数据的id
+  
+  15.9：——文本域 textarea
+  -输入多行数据时使用；
+  -格式：
+     <textarea></textarea>
+  例如：个人介绍：<textarea name="intro" rows="3" cols="30" ></textarea>   
+  
+  15.10：——下拉选框
+   <div>
+             <select name="city">
+                     <option>选择城市</option>  
+                     <option value="bj">北京</option>
+                     <option value="sh">上海</option>
+                     <option value="sz">深圳</option>
+                     <option value="cd">成都</option>
+             </select>                     
+       
+       </div> 
+  15.11:——按钮
+  -提交按钮：  
+    <input type="submit" value="注册">                                                                       
+  -重置按钮；
+   <input type="reset" value="重置">  
+  -普通按钮;
+   <input type="button" value="按钮"> 
+    
+  把form和table结合一起写一个注册页面  
+    
+    
+    
+    

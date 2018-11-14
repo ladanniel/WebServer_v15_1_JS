@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+                  var cities=[["唐山","秦皇岛","邯郸"],["哈尔滨","齐齐哈尔","佳木斯"],["青岛","济南","烟台"]];
+                  function changeAction(){   
+                  var index =  $("select:eq(0)").val();//得到下标
+                 /*  alert(index); */
+                  var arr = cities[index]; 
+                 /*  $("select:eq(0)").html("<option>"+请选择+"</option>") */
+                   for(var i=0;i<arr.length;i++){
+                	   var $option = $("<option>"+arr[i]+"</option>");//放入option中
+                	   $("select:eq(1)").append($option);
+                	   
+                   }
+                    	  
+                        }      
+</script>
+</head>
+<body>
+       
+           <select onchange="changeAction()">
+                  <option>请选择</option>
+                  <option value="0">河北</option>
+                  <option value="1">黑龙江</option>
+                  <option value="2">山东</option>
+                  
+           </select>
+           <select id="s2">
+                   <option>请选择</option>
+                   
+           </select>
+</body>
+</html>

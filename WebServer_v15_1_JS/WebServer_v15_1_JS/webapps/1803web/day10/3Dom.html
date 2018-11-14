@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+      <script type="text/javascript">
+             /*  var p = document.getElementById("pid");
+              var inputs = document.getElementsByTagName("input");//通过标签名查找
+              //通过成绩关系查找
+              //元素.childNodes获取当前元素内部所有的内容，包括文本内容和元素内容；
+                var nodes = p.childNodes;
+              //获取元素的上级元素格式：元素.parentElement
+              var div = p.parentElement;
+              //获取兄弟元素；
+              var nodes = p.parentElement.childNodes;
+              //通过name属性获取元素
+              var inputs = document.getElementsByName("gender");
+              //往页面中添加一个新的div */
+              
+              onload = function(){
+            	  var newDiv = document.createElement("div");
+            	  //给元素设置内容
+            	  newDiv.innerText = "新的DIV";
+            	 // 添加到body里面
+            	 document.body.appendChild(newDiv);
+              }
+              
+      </script>
+</head>
+<body>
+       <div>
+            <p id="pid">这是p标签内容</p>
+            <span><a href="#">这是超链接</a></span>
+            <input type="radio" name="gender">男
+            <input type="radio" name="gender">女
+       </div>
+</body>
+</html>

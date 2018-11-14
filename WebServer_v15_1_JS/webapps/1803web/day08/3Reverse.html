@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+       <script type="text/javascript">
+       
+       //数值顺序反转；
+       var arr = [1,2,3];
+       arr.reverse();
+       alert(arr);
+      //数组排序
+      var arr1 = [1,12,2,5,23,4];
+      //sort默认排序规则：按照每一个元素的Unicode编码进行排序，比完第一个再比第二个，以此类推；
+      //相当于是以字符串的进行排序
+      arr1.sort();
+      alert(arr1);
+      //自定义排序
+       /*   function sorFunc(a,b){
+    	  //升序
+        	 return a-b; */
+    	 //降序
+    	// return b-a;
+       /*   }
+      alert(arr1.sort(sortFunc()); */
+      //使用匿名排序
+      arr1.sort(function(a,b){
+    	 return a-b; 
+      });
+      alert(arr1);
+       </script>
+</head>
+<body>
+     
+
+</body>
+</html>

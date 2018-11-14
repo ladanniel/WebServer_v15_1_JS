@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#panel{
+		width: 200px;
+		margin: 0 auto;
+		border: 1px solid #ccc;
+		/* 因为内部元素浮动 */
+		overflow: hidden;
+		border-radius:4px;
+	}
+	/* 按钮添加效果 */
+	#panel input{
+		width: 45px;  /* 50  20px */
+		height: 45px;
+		float: left;
+		margin: 4px 0px 4px 4px;
+		border: 4px solid #ccc;
+		border-radius:4px;
+	}
+	/* 显示文本的标签 */
+	p{
+		margin:4px 0 4px 4px;
+		border: 4px solid #ccc;
+		border-radius:4px;
+		width: 135px;
+		float: left;
+		height: 37px;
+		line-height: 37px;
+	}
+</style>
+<script type="text/javascript">
+	function calfn(){
+		//获取事件源
+		var obj = event.target||event.srcElement;
+		//alert(obj.nodeName);
+		//找出按钮
+		if(obj.nodeName=="INPUT"){
+			//得到p标签
+			var p = 
+				document.getElementsByTagName("p")[0];
+			if(obj.value=="="){//等号
+				p.innerText = eval(p.innerText);
+			
+			}else if(obj.value=="C"){//清楚按钮
+				p.innerText = "";
+				
+			}else{//数字或运算符
+				p.innerText+=obj.value;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<!-- 外层大的div -->
+<div id="panel" onclick="calfn()">
+	<!-- 上面单行div -->
+	<div>
+		<p></p>
+		<input type="button" value="C"> 
+	</div>
+	<!-- 下面按钮div -->
+	<div>
+		<input type="button" value="7">
+		<input type="button" value="8">
+		<input type="button" value="9">
+		<input type="button" value="/">
+		<input type="button" value="4">
+		<input type="button" value="5">
+		<input type="button" value="6">
+		<input type="button" value="*">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+		<input type="button" value="-">
+		<input type="button" value="0">
+		<input type="button" value=".">
+		<input type="button" value="=">
+		<input type="button" value="+">
+	</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

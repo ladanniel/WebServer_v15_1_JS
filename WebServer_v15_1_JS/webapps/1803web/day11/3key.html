@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+           <script type="text/javascript">
+                    function kdf(){
+                	   //获取字符兼容性问题
+                	   //工作中使用的方式，测试兼容性问题
+                	   var code=window.event?event.keyCode:event.which;
+                	   console.log("键盘按下-->"+code)
+                	    
+                	   
+                	    var code = event.keyCode;
+                	   console.log("键盘触发事件"+code);
+                	   var code = event.which;
+                	   console.log("which"+code); 
+                	   //把编码转化成字符
+                	    var str = String.fromCharCode(code);
+                	   console.log(str);
+                	   //通过字符规律判断是否是数字48-57为数字
+                	   if(code>=48&&code<=57){
+                		   return true;
+                	   }else{
+                		   return false;
+                	   }
+                	  
+                	
+                   } 
+                   
+                   onload = function(){
+                	   var btn = document.getElementById("btn");
+                	   btn.onclick = function(){
+                		   alert("按钮事件绑定成功");
+                	   }
+                   }
+           </script>
+</head>
+<body>
+      <input type="text" onkeydown="return kdf()">
+      <input id="btn" type="button" value="动态绑定">
+</body>
+</html>

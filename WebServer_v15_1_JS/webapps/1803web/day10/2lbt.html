@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+           <style type="text/css">
+                 div,img{
+                      width: 200px;
+                      height: 200px;
+                 }
+                 div{
+/* 为了让内部图片位置相对于自己 */
+                      position: relative;
+                      overflow: hidden; /* 超出位置不显示 */
+                 }
+                 img{
+                    position: absolute;
+                 }
+                 
+           </style>
+           
+           <script type="text/javascript">
+           /* 页面加载完 初始化图片位置 */
+      	 onload = function(){
+      		 var imgs = 
+      			 document.getElementsByTagName("img");
+      		 /* 遍历每张图片 让图片的位置平铺开 */
+      		 for(var i=0;i<imgs.length;i++){
+      			 var img = imgs[i];
+      			 img.style.left = i*200+"px";
+      		 }
+      	 }
+      	 
+      	/*  onclick = function(){
+      		 move();
+      	 } */
+      	 
+      	
+      	 function move(){
+      		 /* 开启定时器 每秒移动60次 每次5个像素  */
+      			var moveId = setInterval(function(){
+      				 var imgs = 
+      					 document.getElementsByTagName("img");
+      				 /* 遍历每张图片 让图片的位置-5px */
+      				 for(var i=0;i<imgs.length;i++){
+      					 var img = imgs[i];
+      					  //得到之前的位置
+      					  var oldLeft = parseInt(img.style.left);
+      					 	oldLeft-=5;
+      					 	//移除屏幕后 放在所有图片的后面
+      					 	if(oldLeft<=-200){
+      					 		oldLeft=600;
+      					 		/* 图片移动一格就停止  */
+      					 		clearInterval(moveId);
+      					 	}
+      					  //把修改后的值放回去
+      					  img.style.left = oldLeft+"px";
+      				 }
+      			 },1000/60);
+      	 }
+      	 
+      	 
+      	 var myId;
+      	 //让两秒倒计时的定时器 停止
+      	 function stop(){
+      		 clearInterval(myId);
+      	 }
+      	 function start(){
+      		 /* 每隔两秒移动一次图片  */
+      			myId = setInterval(function(){
+      					 move();
+      				 },2000);
+      	 }
+      	 //一运行 就开始移动图片
+      	 start();
+      	 
+      	 /* 离开页面停止 */
+      	 onblur = function(){
+      		 stop();
+      	 }
+      	 /* 获取焦点继续 */
+      	 onfocus = function(){
+      		 start();
+      	 }
+
+           
+  </script>
+</head>
+<body>
+       <div id="big" onmouseover="stop()" onmouseset="">
+                   <img alt="" src="c.png">
+                   <img alt="" src="d.jpg">
+                   <img alt="" src="k.jpg">
+                    <img alt="" src="o.jpg">
+       
+       </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!-- JQuery选择器：
+    1、标签名选 择器：$("div"):匹配文档中所有div
+    2、id选择器：$("#div"):获取id元素
+    3、类选择器：$(".div")
+    4、分组选择器：$("div,#div,.class");
+    5、所有元素：$("*")
+ -->
+ <!--层级选择器-->
+ 1、$("div span"):匹配div下所有的span元素；
+ 2、$("div>span"):匹配div下所有span的子元素；
+ 3、$("div+span")：匹配div后面紧邻的span弟弟元素；
+ 4、$("div～span")：匹配div后面所有的span弟弟们元素
+ 5、层级函数：
+    5.1、获取元素的所有兄弟元素：$("#two").siblings("div")
+    5.2、获取元素的哥哥元素：$("#two").prev("div")
+    5.3、获取元素的哥哥们元素：$("#two").prevAll("div")
+    5.4、获取元素的弟弟元素：$("#two").next("div")
+    5.5、获取元素的弟弟们元素：$("#two").nextAll("div")
+
+<!--过滤选择器--> 
+ 1、$("div:first")：匹配所有div中的第一个元素
+ 2、$("div:last")：匹配所有div中的最后一个元素
+ 3、$("div:even")：匹配所有div中的偶数div，位置从0开始
+ 4、$("div:odd")：匹配所有div中的奇数div，位置从0开始
+ 5、$("div:eq(n)")：匹配所有div中第n个元素，位置从0开始
+ 6、$("div:lt(n)")：匹配所有div中下标小于n的元素，位置从0开始
+ 7、$("div:gt(n)")：匹配所有div中下标大于n的元素，位置从0开始
+ 8、$("div:not(.one)")：匹配所有div中除了.class为one的元素；
+ 
+ <!--内容选择器-->
+ 1、$("div:has(p)"):匹配所有包含p标签的div
+ 2、$("div:empty"):匹配所有空的div
+ 3、$("div:parent"):匹配所有
+ 
+ 非空的div
+ 4、$("div:contains('id')):匹配包含id的div
+ 
+ <!--可见选择器-->
+ 1、$("div:hidden"):匹配所有隐藏的div元素
+ 2、$("div:visible"):匹配所有可见的div元素
+ 
+ <!--属性选择器-->
+ 1、$("div[id]")：匹配有ID属性的div元素
+ 2、$("div[id='d1']")：匹配有ID属性等于d1的div元素
+ 3、$("div[id!='d1']")：匹配有ID属性不等于d1的div元素
+ 
+ <!--子元素选择器-->
+ 1、$("div:nth-child(d)")：n从1开始，匹配div中第n个子元素；
+ 2、$("div:first-child")：匹配div中第1个子元素；
+ 3、$("div:last-child")：匹配div中最后n个子元素；
+ 
+ <!--表单选择器-->
+ 1、$(":input")：匹配所有的input中 文本框 密码框，单选、复选、下拉选、文本域（textarea）、按钮
+ 2、$(":password")：匹配所有的密码框 
+ 3、$(":radio")：匹配所有的单选框 
+ 4、$(":checkBox")：匹配所有的复选框 
+ 5、$("input:checked")：匹配所有被选中的的复选框 、单选框、下拉选等
+ 6、$(":selected")：匹配所有被选中的下拉选option
+ 
+ <!--文档操作 -->
+   var $d = $("<div>abc</div>");           //创建元素
+            $("#big").append($d);                   //添加元素，最后面
+            $("#big").prepend($d);                 //最前面
+            "兄弟元素".after($d);                   //插入元素，插入到兄弟元素的后面
+            "兄弟元素".before($d);                  //插入到兄弟元素的前面
+            $("id").remove();                      //删除元素，通过自己删除
+            $("#big").remove($d);                  //通过上级删除
+            $("#big").remove("#id");               //
+            
+ <!-- 修改样式-->
+  1、$("#id").css("width","40px");//设置宽度
+     $("#id").css("width");       //获取宽度
+     
+ <!-- 属性-->
+  $("#id").attr("id","xx");     //设置id属性
+  $("#id").attr("id");          //获取id
+ <!-- 文本 -->
+  $("#id").text("xxxx");     //设置文本
+   $("#id").text();          //获取文本
+ <!--HTML-->
+   $("#id").html("xxxx");     //设置元素html代码
+   $("#id").html();          //获取HTML代码
+   
+   
+   x.parent();/得到上级父元素
+   x.children();/得到所有的子元素
+   x.children.eq(n);//获取第n个子元素；
+   $("div").wq(0)://得到查询结果中的第几个 
+   m.children("#a");//查询m元素中，id为a的子元素；
+ 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+             *{margin: 0;padding: 0;
+             font: 12px "simhei", Arial, Helvetica, sans-serif;
+		color: #666;
+             }
+             #leftsidebarbox{width: 150px;
+                             height: 668px;
+                             border: 1px solid red;           
+             }
+             .menu{background-color: rgb(10, 161, 237);
+                   font-size: 14px;
+                   font-weight: bold;
+                   font-family: "SimHei";
+                   color: white; 
+                   width: 140px;
+                   height: 36px;
+                   line-height: 36px;
+                   padding-left: 10px;
+                  
+                   background-image:url("../images/myOrder/myOrder1.png");
+                   background-repeat: no-repeat;
+                   background-position: 90% 50%;
+                   margin-bottom: 8px;
+                   
+                   }  
+                      /*vertical-align垂直对其方式，baseline:（默认）、middle中间、top 如果
+                      需要修改元素位置必须把默认的baseline修改掉，不然图片与字会产生联动*/
+               img{vertical-align:middle;
+                   margin-top: -5px;
+                    }
+            ul>ul>li{font-size: 12px;
+                      color: #808080;
+                      font-family: "SimHei";
+                      text-align: center;
+                      margin: 8px 0;
+            }
+</style>
+</head>
+<body>
+      <div id="leftsidebarbox">
+        <ul>
+          <li class="menu m1"><img src="../images/myOrder/myOrder.png" > 我的订单</li>
+                             
+                     <ul>
+                             <li>全部订单</li>
+                             <li>待付款</li>
+                             <li>待收货</li>
+                             <li>待评价</li>
+                             <li>退货退款</li>     
+                     </ul>
+                          
+          <li class="menu m2"><img src="../images/myOrder/pcenter_icon1.png"> 我的优惠券</li>
+          <li class="menu m3"><img src="../images/myOrder/pcenter_icon2.png"> 收货地址</li>
+                     <ul>
+                              <li>地址管理</li>
+                     </ul>
+          <li class="menu m4"><img src="../images/myOrder/pcenter_icon3.png"> 账号管理</li>
+       </ul>
+      </div>
+      
+      
+     
+
+</body>
+</html>

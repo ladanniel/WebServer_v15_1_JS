@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <style type="text/css">
+    p{margin: o auto;
+      font-size: 120%;
+      font-family: "华文楷体";
+      float: left;}
+      
+      .ok{
+      color: green;
+      }
+      .error{
+      color: red;
+      }
+   </style>
+   <script type="text/javascript">
+           function usercheck(){
+        	   //得到user元素
+        	   var userinput = document.getElementById("user");
+        	   //创建正则
+        	   var reg = /^\w{6,10}$/;
+        	   //得到span标签
+        	   var span = document.getElementById("msd");
+        	   if(reg.test(userinput.value)){
+        		   //修改元素的class值；
+        		   msd.className = "ok";
+        		   return true;
+        	   }else{
+        		   msd.className = "error";
+        		   return false;
+        	   }
+           }
+   </script>
+</head>
+<body>
+       <form action="http://www.tmooc.cn/#" onsubmit="return userCheck()">
+       
+                      <p>
+                         账号:<input id="user"  type="text" onblur="usercheck()">   <!-- onblur:光标失去焦点， -->
+                         <span id="msd">6-10位字母，数字，下划线</span>
+                      </p>
+                      <p>
+                         密码:<input type="password">
+                         <span id="pw">10-20位字母，数字，下划线</span>
+                      </p>
+                      
+                      <input type="submit" value="登录">
+       </form>
+
+</body>
+</html>

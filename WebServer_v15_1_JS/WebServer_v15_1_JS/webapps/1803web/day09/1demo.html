@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script type="text/javascript">
+             function runcode(){
+            	 
+            	 var myinput = document.getElementById("myinput");
+            	 var str = myinput.value;                                  /* 得到用户输入的信息 */
+            	 /* 把用户输入内容以代码形式执行 */
+            	 eval(str);
+            	 /* 使用eval可以实现不改动页面源代码的情况下添加或修改页面的 逻辑 */
+             }
+             
+             function cal(){
+            	 /* 获取输入框信息 */
+            	 var numberinput = document.getElementById("numberinput");
+            	  /*得到输入信息  */
+            	 var number = numberinput.value;
+            	 numberinput.value=eval(number);
+             }
+  </script>
+</head>
+<body>
+    
+     <a href="" onclick="return confirm('确认离开吗？')">跳转页面</a>
+     
+     <input type="text" id="myinput" >
+     <input type="button" value="执行代码" onclick="runcode()">
+     <p>计算器练习</p>
+     <input type="text" id="numberinput">
+     <input type="button" value="计算" onclick="cal()">
+     
+     
+     
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+     <style type="text/css">
+                  div,img{
+                      width: 500px;
+                      height: 500px;
+                           /*   下     上     左     右  */
+                      margin: 100px    0px    0px  100px;;
+                  }
+       div {
+            overflow: hidden;
+            }
+       
+     </style>
+            <script type="text/javascript">
+                          var times = 0;
+                          //生命一个变量,也可以采取for循环
+                         var count = 0;
+                          /* 开启定时器  */
+                           setInterval(function(){
+                        	  //变量递增
+                        	   count++;
+                        	   /* 变量循环 */
+                        	 /*   console.log(count%4)； */
+                        	 /* 细分 */
+                        	 var  index = count%4;
+                     var imgs = document.getElementsByTagName("img");
+                     for(var i = 0; i<imgs.length;i++){
+                    	 var img = imgs[i];
+                    	 if(i==index){
+                    		 img.style.display = "block";
+                    	 }else{
+                    		 img.style.display = "none";
+                    		 
+                    	 }
+                    	 
+                    	 
+                     }
+                     if(times==200){
+                    	 clearTimeout();
+                     }
+                     
+                           },100)
+                           
+            </script>
+</head>
+<body>
+      <div id="big">
+                   <img alt="" src="c.png">
+                   <img alt="" src="d.jpg">
+                   <img alt="" src="k.jpg">
+                    <img alt="" src="o.jpg">
+       
+       </div>
+</body>
+</html>
